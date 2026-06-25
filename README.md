@@ -2,7 +2,7 @@
 
 A colorful, interactive website for getting into basketball — built for the 2025-26 NBA season.
 
-**Live site:** https://rohitkottomtharayil-tech.github.io/nbaguide/ (after GitHub Pages is enabled)
+**Live site:** https://rkottomt.github.io/nbaguide/
 
 ## Features
 
@@ -38,10 +38,12 @@ This repo deploys automatically via GitHub Actions on every push to `main`.
 **One-time setup in your GitHub repo:**
 
 1. Go to **Settings → Pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**
-3. Push to `main` — the workflow builds a static export and publishes it
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not "Deploy from a branch")
+3. Push to `main` — the workflow builds and publishes automatically
 
-The site will be live at `https://<your-username>.github.io/nbaguide/`.
+If the deploy job fails with a permissions/environment error, make sure step 2 is done first, then re-run the workflow from the **Actions** tab.
+
+The site will be live at `https://rkottomt.github.io/nbaguide/`.
 
 ## Project Structure
 
