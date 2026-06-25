@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeroScroll } from "@/components/HeroScroll";
 
 const sections = [
   {
@@ -42,36 +43,18 @@ const sections = [
 export default function HomePage() {
   return (
     <div>
-      <section className="mx-auto max-w-6xl px-4 py-16 text-center">
-        <span className="liquid liquid-sm inline-block text-sm font-bold text-orange-300 mb-6">
-          2025-26 Season
-        </span>
-        <h1 className="text-5xl sm:text-7xl font-black text-white leading-tight section-title">
-          Your NBA
-          <span className="block text-gradient">Beginner Guide</span>
-        </h1>
-        <p className="mt-6 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-          Everything you need to get into basketball — positions, all 30 teams,
-          current standings, player rankings, and a decade of history. Hover
-          over any player name to see their face.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link
-            href="/learn"
-            className="liquid-accent relative px-6 py-3 font-bold text-white"
-          >
-            Start Learning →
-          </Link>
-          <Link
-            href="/teams/east"
-            className="glass glass-button border border-white/15 px-6 py-3 font-bold text-white"
-          >
-            Browse Teams
-          </Link>
-        </div>
-      </section>
+      <HeroScroll />
 
-      <section className="mx-auto max-w-6xl px-4 pb-20">
+      <section className="mx-auto max-w-6xl px-4 pb-20 pt-8">
+        <div className="mb-10 text-center">
+          <p className="liquid liquid-sm inline-block text-xs font-bold uppercase tracking-[0.2em] text-white/50 mb-3">
+            Explore
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-black text-white section-title">
+            Pick your path
+          </h2>
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {sections.map((section) => (
             <Link
