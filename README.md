@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NBA Beginner Guide
 
-## Getting Started
+A colorful, interactive website for getting into basketball — built for the 2025-26 NBA season.
 
-First, run the development server:
+**Live site:** https://rohitkottomtharayil-tech.github.io/nbaguide/ (after GitHub Pages is enabled)
+
+## Features
+
+- **Learn the basics** — positions, conferences, season structure, and awards
+- **2025-26 standings** — full East and West tables with playoff/play-in indicators
+- **All 30 teams** — ranked by seed, with write-ups and key players
+- **Top 5 by position** — PG through C with headshot cards
+- **Season history** — MVPs, DPOYs, and Finals results (2016–2026)
+- **Player hover cards** — every player mention shows `(POS)` and reveals a headshot on hover (tap on mobile)
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To preview the GitHub Pages build locally (with `/nbaguide` base path):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+GITHUB_PAGES=true npm run build
+npx serve out
+```
 
-## Learn More
+Then open the URL shown (paths will be under `/nbaguide/`).
 
-To learn more about Next.js, take a look at the following resources:
+## GitHub Pages Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This repo deploys automatically via GitHub Actions on every push to `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**One-time setup in your GitHub repo:**
 
-## Deploy on Vercel
+1. Go to **Settings → Pages**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+3. Push to `main` — the workflow builds a static export and publishes it
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site will be live at `https://<your-username>.github.io/nbaguide/`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+src/
+├── app/           # Pages (learn, standings, teams, rankings, history)
+├── components/    # Player, TeamCard, StandingsTable, Nav, etc.
+├── data/          # Players, teams, standings, rankings, history
+└── lib/           # Headshot URLs, content parser
+```
+
+Player headshots load from the NBA CDN (`cdn.nba.com`). Players without an NBA ID show initials as a fallback.
+
+## Special Callouts
+
+- **Knicks** — "Your Team" (2025-26 Champions)
+- **Timberwolves** — "Rohit's Favorite"
+- **Hornets** — "Elliot's Favorite"
