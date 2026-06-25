@@ -267,6 +267,23 @@ body {
 
 .hero-sticky {
   overflow: hidden;
+  perspective: 1200px;
+  perspective-origin: 50% 45%;
+}
+
+.hero-scene {
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-layer {
+  will-change: transform;
+}
+
+.hero-content {
+  transform-style: preserve-3d;
 }
 
 .hero-orb {
@@ -307,7 +324,6 @@ body {
 .hero-binary {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
