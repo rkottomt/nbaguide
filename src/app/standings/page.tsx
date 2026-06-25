@@ -12,7 +12,7 @@ export default function StandingsPage() {
         </p>
       </div>
 
-      <div className="mb-8 rounded-2xl border border-orange-500/30 bg-orange-500/10 p-5">
+      <div className="mb-8 glass glass-tint-accent p-5">
         <p className="font-bold text-orange-300">Regular season ≠ playoffs</p>
         <p className="mt-1 text-sm text-white/70 leading-relaxed">
           The Knicks finished 3rd in the East (53-29) but went on to win the

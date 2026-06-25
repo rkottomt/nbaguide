@@ -52,7 +52,7 @@ export function Player({ slug }: PlayerProps) {
       {open && (
         <span
           role="tooltip"
-          className="absolute bottom-full left-1/2 z-50 mb-2 w-56 -translate-x-1/2 rounded-xl border border-white/10 bg-[#1a1f35] p-3 shadow-2xl shadow-black/50 animate-in fade-in zoom-in-95 duration-150"
+          className="absolute bottom-full left-1/2 z-50 mb-2 w-56 -translate-x-1/2 glass p-3 shadow-2xl shadow-black/50 animate-in"
           onMouseEnter={() => setOpen(true)}
           onMouseLeave={() => setOpen(false)}
         >
@@ -90,7 +90,7 @@ export function Player({ slug }: PlayerProps) {
               </span>
             </span>
           </span>
-          <span className="absolute -bottom-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 border-b border-r border-white/10 bg-[#1a1f35]" />
+          <span className="absolute -bottom-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 border-b border-r border-white/12 bg-[rgba(14,18,32,0.85)]" />
         </span>
       )}
     </span>

@@ -19,16 +19,20 @@ export function PlayerCard({ slug, rank, note }: PlayerCardProps) {
 
   return (
     <div
-      className="group relative flex items-center gap-4 rounded-2xl glass-card p-4 transition-all hover:-translate-y-1 hover:border-white/20 hover:shadow-xl hover:shadow-black/30"
+      className="group glass glass-hover relative flex items-center gap-4 p-4"
       style={{ borderLeftColor: accentColor, borderLeftWidth: 4 }}
     >
       <span
-        className="absolute -top-2 -left-2 flex h-8 w-8 items-center justify-center rounded-full text-sm font-black text-white shadow-lg"
-        style={{ backgroundColor: accentColor }}
+        className="liquid liquid-sm absolute -top-2 -left-2 flex h-8 w-8 items-center justify-center text-sm font-black text-white"
+        style={{
+          background: `linear-gradient(135deg, ${accentColor}ee, ${accentColor}aa)`,
+          borderColor: `${accentColor}66`,
+          borderRadius: "9999px",
+        }}
       >
         #{rank}
       </span>
-      <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-[#0d1220]">
+      <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-black/30">
         {headshotUrl ? (
           <Image
             src={headshotUrl}

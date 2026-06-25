@@ -17,7 +17,7 @@ export function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-40 border-b border-white/10 bg-[#070b14]/85 backdrop-blur-xl">
+    <nav className="glass glass-nav sticky top-0 z-40 border-b border-white/10">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <span className="text-2xl">🏀</span>
@@ -35,11 +35,11 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors ${
+                className={
                   active
-                    ? "bg-orange-500 text-white"
-                    : "text-white/60 hover:text-white hover:bg-white/10"
-                }`}
+                    ? "liquid liquid-sm whitespace-nowrap px-3 py-1.5 text-sm font-semibold text-white"
+                    : "whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-semibold text-white/60 transition-colors hover:text-white hover:bg-white/8"
+                }
               >
                 {link.label}
               </Link>

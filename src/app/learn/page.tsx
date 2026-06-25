@@ -21,10 +21,10 @@ export default function LearnPage() {
           {positions.map((pos) => (
             <div
               key={pos.abbr}
-              className="rounded-2xl border border-white/10 bg-white/5 p-5"
+              className="glass p-5"
             >
               <div className="flex items-center gap-3 mb-2">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/20 text-orange-400 font-black text-sm">
+                <span className="liquid liquid-sm flex h-10 w-10 items-center justify-center text-orange-300 font-black text-sm">
                   {pos.abbr}
                 </span>
                 <h3 className="text-lg font-bold text-white">{pos.name}</h3>
@@ -34,7 +34,7 @@ export default function LearnPage() {
                 {pos.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs text-white/60"
+                    className="liquid liquid-sm text-xs text-white/70"
                   >
                     {skill}
                   </span>
@@ -59,7 +59,7 @@ export default function LearnPage() {
           East vs West Conferences
         </h2>
         <div className="grid sm:grid-cols-2 gap-4">
-          <div className="rounded-2xl border border-blue-500/30 bg-blue-500/10 p-5">
+          <div className="glass glass-tint-east p-5">
             <h3 className="font-bold text-blue-300 text-lg">Eastern Conference</h3>
             <p className="mt-2 text-sm text-white/70 leading-relaxed">
               15 teams mostly from the eastern US and Canada (Toronto). The top
@@ -67,7 +67,7 @@ export default function LearnPage() {
               at 60-22.
             </p>
           </div>
-          <div className="rounded-2xl border border-orange-500/30 bg-orange-500/10 p-5">
+          <div className="glass glass-tint-west p-5">
             <h3 className="font-bold text-orange-300 text-lg">Western Conference</h3>
             <p className="mt-2 text-sm text-white/70 leading-relaxed">
               15 teams from the western US. OKC leads at 64-18. The West has
@@ -88,7 +88,7 @@ export default function LearnPage() {
           {seasonBasics.map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-5"
+              className="glass p-5"
             >
               <h3 className="font-bold text-white">{item.title}</h3>
               <p className="mt-2 text-sm text-white/60 leading-relaxed">
@@ -105,9 +105,9 @@ export default function LearnPage() {
           {awards.map((award) => (
             <div
               key={award.name}
-              className="rounded-2xl border border-white/10 bg-white/5 p-4"
+              className="glass p-4"
             >
-              <span className="inline-block rounded-lg bg-yellow-500/20 px-2 py-0.5 text-xs font-bold text-yellow-400">
+              <span className="liquid liquid-sm inline-block text-xs font-bold text-yellow-300">
                 {award.name}
               </span>
               <h3 className="mt-2 font-semibold text-white text-sm">

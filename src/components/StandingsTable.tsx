@@ -13,15 +13,8 @@ export function StandingsTable({ conference, rows }: StandingsTableProps) {
   const isEast = conference === "east";
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-      <div
-        className="px-5 py-4 border-b border-white/10"
-        style={{
-          background: isEast
-            ? "linear-gradient(135deg, #1e4d8c22, #0d1220)"
-            : "linear-gradient(135deg, #c44d1a22, #0d1220)",
-        }}
-      >
+    <div className={`glass overflow-hidden ${isEast ? "glass-tint-east" : "glass-tint-west"}`}>
+      <div className="px-5 py-4 border-b border-white/10">
         <h2 className="text-xl font-black text-white">
           {isEast ? "Eastern Conference" : "Western Conference"}
         </h2>
@@ -49,20 +42,19 @@ export function StandingsTable({ conference, rows }: StandingsTableProps) {
                 <tr
                   key={row.teamSlug}
                   className={`border-b border-white/5 transition-colors hover:bg-white/5 ${
-                    row.seed === 8
-                      ? "border-b-2 border-b-orange-500/40"
-                      : ""
+                    row.seed === 8 ? "border-b-2 border-b-orange-500/40" : ""
                   }`}
                 >
                   <td className="px-4 py-3">
                     <span
-                      className={`inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${
+                      className={`liquid liquid-sm inline-flex h-7 w-7 items-center justify-center text-xs font-bold ${
                         isPlayoff
-                          ? "bg-green-500/20 text-green-400"
+                          ? "text-green-300"
                           : isPlayIn
-                            ? "bg-yellow-500/20 text-yellow-400"
-                            : "bg-white/10 text-white/50"
+                            ? "text-yellow-300"
+                            : "text-white/50"
                       }`}
+                      style={{ borderRadius: "9999px", padding: 0 }}
                     >
                       {row.seed}
                     </span>
@@ -73,7 +65,7 @@ export function StandingsTable({ conference, rows }: StandingsTableProps) {
                       className="flex items-center gap-2 font-semibold text-white hover:text-orange-400 transition-colors"
                     >
                       <span
-                        className="h-3 w-3 rounded-full shrink-0"
+                        className="h-3 w-3 rounded-full shrink-0 ring-1 ring-white/20"
                         style={{ backgroundColor: team?.primaryColor }}
                       />
                       {team?.name}

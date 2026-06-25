@@ -19,10 +19,10 @@ export function TeamCard({ team }: TeamCardProps) {
   return (
     <Link
       href={`/teams/${team.slug}`}
-      className="group relative block overflow-hidden rounded-2xl glass-card transition-all hover:-translate-y-1.5 hover:border-white/25 hover:shadow-2xl hover:shadow-black/40"
+      className="group glass glass-hover relative block overflow-hidden"
     >
       <div
-        className="h-2 w-full"
+        className="h-1.5 w-full"
         style={{
           background: `linear-gradient(90deg, ${team.primaryColor}, ${team.secondaryColor})`,
         }}
@@ -31,10 +31,9 @@ export function TeamCard({ team }: TeamCardProps) {
         <div className="flex items-start justify-between gap-3">
           <div>
             <span
-              className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold text-white mb-2"
-              style={{
-                backgroundColor: isEast ? "#1e4d8c" : "#c44d1a",
-              }}
+              className={`liquid liquid-sm inline-flex items-center text-xs font-bold text-white mb-2 ${
+                isEast ? "glass-tint-east" : "glass-tint-west"
+              }`}
             >
               #{team.seed} · {isEast ? "East" : "West"}
             </span>
@@ -48,8 +47,11 @@ export function TeamCard({ team }: TeamCardProps) {
           </div>
           {badge && (
             <span
-              className="shrink-0 rounded-full px-2.5 py-1 text-xs font-bold text-white"
-              style={{ backgroundColor: badge.color }}
+              className="liquid liquid-sm shrink-0 text-xs font-bold text-white"
+              style={{
+                background: `linear-gradient(135deg, ${badge.color}cc, ${badge.color}88)`,
+                borderColor: `${badge.color}66`,
+              }}
             >
               {badge.label}
             </span>

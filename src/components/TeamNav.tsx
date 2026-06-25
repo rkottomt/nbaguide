@@ -15,7 +15,7 @@ export function TeamNav({ prev, next, conference }: TeamNavProps) {
       {prev ? (
         <Link
           href={`/teams/${prev.slug}`}
-          className="group flex-1 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/8 hover:shadow-lg"
+          className="group glass glass-hover flex-1 p-4"
           style={{ borderLeftColor: prev.primaryColor, borderLeftWidth: 4 }}
         >
           <span className="text-xs font-semibold text-white/40 uppercase tracking-wider">
@@ -35,7 +35,7 @@ export function TeamNav({ prev, next, conference }: TeamNavProps) {
       {next ? (
         <Link
           href={`/teams/${next.slug}`}
-          className="group flex-1 rounded-2xl border border-white/10 bg-white/5 p-4 text-right transition-all hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/8 hover:shadow-lg sm:ml-auto"
+          className="group glass glass-hover flex-1 p-4 text-right sm:ml-auto"
           style={{ borderRightColor: next.primaryColor, borderRightWidth: 4 }}
         >
           <span className="text-xs font-semibold text-white/40 uppercase tracking-wider">

@@ -21,12 +21,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <footer className="border-t border-white/10 py-6 text-center text-sm text-white/30">
-          NBA Beginner Guide · 2025-26 Season
-        </footer>
+      <body className="min-h-full">
+        <div className="ambient-bg" aria-hidden="true">
+          <div className="ambient-blob ambient-blob--accent" />
+          <div className="ambient-blob ambient-blob--cool" />
+          <div className="ambient-blob ambient-blob--warm" />
+          <div className="ambient-noise" />
+        </div>
+        <div className="app-shell">
+          <Nav />
+          <main className="flex-1">{children}</main>
+          <footer className="glass glass-nav border-t border-white/10 py-6 text-center text-sm text-white/40">
+            NBA Beginner Guide · 2025-26 Season
+          </footer>
+        </div>
       </body>
     </html>
   );

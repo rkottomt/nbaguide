@@ -52,11 +52,11 @@ export default async function TeamPage({ params }: TeamPageProps) {
           </Link>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <ConferenceBadge conference={team.conference} />
-            <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-white">
+            <span className="liquid liquid-sm px-3 py-1 text-xs font-bold text-white">
               #{team.seed} Seed · {team.wins}-{team.losses} ({winPct}%)
             </span>
             {team.badge && (
-              <span className="rounded-full bg-orange-500 px-3 py-1 text-xs font-bold text-white">
+              <span className="liquid-accent liquid-sm px-3 py-1 text-xs font-bold text-white">
                 {badgeLabels[team.badge]}
               </span>
             )}
@@ -78,7 +78,7 @@ export default async function TeamPage({ params }: TeamPageProps) {
       <div className="mx-auto max-w-4xl px-4 py-10">
         <section className="mb-10">
           <h2 className="text-xl font-black text-white mb-4 section-title">Overview</h2>
-          <div className="glass-card rounded-2xl p-6 space-y-4 prose-team">
+          <div className="glass p-6 space-y-4 prose-team">
             {team.overview.map((paragraph, i) => (
               <p key={i} className="text-white/80 leading-relaxed">
                 {parseContent(paragraph)}
@@ -97,7 +97,8 @@ export default async function TeamPage({ params }: TeamPageProps) {
                   <Link
                     key={rivalSlug}
                     href={`/teams/${rivalSlug}`}
-                    className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm font-semibold text-red-300 hover:bg-red-500/20 transition-colors"
+                    className="liquid liquid-sm px-4 py-2 text-sm font-semibold text-red-300 hover:text-red-200 transition-colors"
+                    style={{ background: "linear-gradient(135deg, rgba(220,50,50,0.25), rgba(220,50,50,0.08))" }}
                   >
                     vs {rival.name}
                   </Link>
@@ -119,7 +120,7 @@ export default async function TeamPage({ params }: TeamPageProps) {
         {team.funFacts && team.funFacts.length > 0 && (
           <section className="mb-10">
             <h2 className="text-xl font-black text-white mb-4 section-title">Fun Facts</h2>
-            <ul className="glass-card rounded-2xl p-5 space-y-2">
+            <ul className="glass p-5 space-y-2">
               {team.funFacts.map((fact) => (
                 <li
                   key={fact}

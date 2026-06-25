@@ -20,7 +20,7 @@ export default function RankingsPage() {
         {positions.map((pos) => (
           <section key={pos}>
             <div className="flex items-center gap-3 mb-5">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/20 text-orange-400 font-black">
+              <span className="liquid liquid-sm flex h-12 w-12 items-center justify-center text-orange-300 font-black">
                 {pos}
               </span>
               <div>
